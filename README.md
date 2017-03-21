@@ -2,7 +2,7 @@
 Documentation of the course browser technology of the minor Web Development at the University of Applied Sciences in Amsterdam.
 
 # Demo HTML Media `capture`
-HTML Media Capture only works on mobile
+HTML Media Capture only works on mobile browsers for Android & iOS, it opens the camera, or uses the microphone
 > HTML Media Capture works in conjunction with the accept attribute which can take several values, among them:
 > * `accept="audio/*"`
 > * `accept="video/*"`
@@ -24,9 +24,13 @@ and
 <input type="file" name="video" accept="video/*" capture="capture">
 ```
 It has a good automatic fallback, when it's opened in a not-mobile browser the input just opens a file picker.
+![can i use color](/screenshots/ciu_capture.png)
 
 # Demo `input type="color"`
+`<input type="color">` is an HTML tag which, when clicked, opens a color picker. In some browsers like Safari v10 this is not yet supported. The tag will be automatically changed to: `<input type="text">` which can make it unclear for users what to do. A lot of attributes aren't useable when specifying as a `color` type, but value is. By adding a clear label and good example value the user will still be able to know what to do. The value also gives the color picker a standard to start from.
 
 
+![chrome](/screenshots/chrome.png) ![safari](/screenshots/safari.png)
+![can i use color](/screenshots/ciu_color.png)
 
 
