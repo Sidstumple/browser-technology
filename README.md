@@ -33,4 +33,15 @@ It has a good automatic fallback, when it's opened in a not-mobile browser the i
 ![chrome](/screenshots/chrome.png) ![safari](/screenshots/safari.png)
 ![can i use color](/screenshots/ciu_color.png)
 
+# Demo `clip-path: url()`
+`clip-path: url()` is a CSS property to clip images in certain shapes, using external `url()`'s is not completely supported in all browsers.
+The fallback I used for circle clippings was border-radius, I put this above the `clip-path` so it's only used if the browser doesn't know the `url()` property but not when it does know `clip-path`.
+```
+.clip {
+  border-radius: 100vw;
+  clip-path: url(round.svg#svg);
+}
+```
+![can i use clip-path](/screenshots/ciu_clip.png)
 
+# Demo
