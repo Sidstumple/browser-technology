@@ -44,4 +44,123 @@ The fallback I used for circle clippings was border-radius, I put this above the
 ```
 ![can i use clip-path](/screenshots/ciu_clip.png)
 
-# Demo
+# Demo `@supports`
+This native feature detection property of CSS can carry out certain CSS lines based on conditionals. I used this property to check if the browser can use `display = flex`. 
+When `Flex-box` is not supported by the browser, these lines will be carried out:
+```
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+.left-top, .right-top, .left, .right {
+  width: 50%;
+  height: 10em;
+  box-sizing: border-box;
+}
+.left-top {
+  background: #333;
+}
+.left {
+  background: #444;
+}
+.right-top {
+  background: #555;
+}
+.right {
+  background: #666; Demo
+}
+.left-top, .left {
+  float: left;
+}
+.right-top, .right {
+  float: right;
+}
+```
+If the browser does support `Flex-box`, these lines will be carried out:
+```
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+.left-top, .right-top, .left, .right {
+  width: 50%;
+  height: 10em;
+  box-sizing: border-box;
+}
+.left-top {
+  background: #333;
+}
+.left {
+  background: #444;
+}
+.right-top {
+  background: #555;
+}
+.right {
+  background: #666;
+}
+@supports (display:flex) {
+  body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+```
+The float properties are automatically dismantled when `Flex-box` is active.
+
+![can i use @supports](/screenshots/ciu_supports.png)
+
+# Demo `<noscript>`
+Using the `<noscript>` tag in HTML gives you the opportunity to give the user feedback that Javascript is disabled.
+When JavaScript is enabled the background of the div is changed:
+```
+<style media="screen">
+  #block {
+    width: 100%;
+    height: 10em;
+    background: #222; // gets changed to #777
+  }
+</style>
+```
+```
+<script>
+  document.getElementById('block').style.background = "#777"
+</script>
+```
+When JavaScript is disabled the standard styles are used:
+```
+<style media="screen">
+  #block {
+    width: 100%;
+    height: 10em;
+    background: #222;
+  }
+</style>
+```
+```
+<noscript>
+  <p>No Script</p>
+</noscript>
+```
+# Demo `.addEventListener('touchstart', function())`
+`'touchstart'` is not available on not-touch devices, therefore I looked up a function that checks if the device is touch, when it returns true an event listener with `'touchstart'` is fired, else a regular `'click'` event is fired.
+```
+var block = document.getElementById('block');
+function isTouchDevice(){
+  return typeof window.ontouchstart !== 'undefined';
+}
+console.log(isTouchDevice())
+if (isTouchDevice() === true) {
+  block.addEventListener('touchstart', function(){
+    block.style.background = "green";
+  });
+} else {
+  block.addEventListener('click', function(){
+    block.style.background = "yellow";
+  });
+}
+
+```
+
