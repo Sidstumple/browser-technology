@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+      }
+      .left-top, .right-top, .left, .right {
+        width: 50%;
+        height: 10em;
+        box-sizing: border-box;
+      }
+      .left-top {
+        background: #333;
+      }
+      .left {
+        background: #444;
+      }
+      .right-top {
+        background: #555;
+      }
+      .right {
+        background: #666;
+      }
+      .left-top, .left {
+        float: left;
+      }
+      .right-top, .right {
+        float: right;
+      }
+      @supports (display:flex) {
+        body {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="left-top"></div>
+    <div class="right-top"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+  </body>
+</html>

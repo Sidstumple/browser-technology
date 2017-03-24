@@ -1,0 +1,7 @@
+<svg id="round" xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+  <defs>
+    <clipPath id="svg">
+      <circle r="400" cx="400" cy="400"></circle>
+    </clipPath>
+  </defs>
+  </svg>
