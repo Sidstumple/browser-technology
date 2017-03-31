@@ -1,5 +1,6 @@
-# End Assignment Browsertechnologies
+# Final Assignment Browsertechnologies
 For this assignment we had to make a website starting at basic HTML and enhance it with (new)CSS features and Javascript.
+Live link: http://cydstumpel.nl/browser/
 
 # Usercase 
 I want to be able to search contacts and view details.
