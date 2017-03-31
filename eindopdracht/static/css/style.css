@@ -1,0 +1,156 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul > li:first-of-type {
+  background: #555;
+  color: white;
+  height: 3em;
+  line-height: 2.9em;
+  display: block;
+}
+
+ul li {
+  background: white;
+  color: #333;
+  padding-left: 1em;
+  margin: 0;
+}
+
+.detail {
+  display: block;
+  position: relative;
+  top: -250px;
+  visibility: hidden;
+}
+
+.digits {
+  height: 0;
+  overflow: hidden;
+  background: white;
+  margin-left: 3em;
+}
+
+.open {
+  height: 5.5em;
+  transition: .5s;
+}
+
+:target + .targ {
+  height: 5.5em;
+  transition: .5s;
+}
+
+li h2 {
+  margin: 0;
+  margin-left: 1em;
+  display: inline-block;
+}
+
+ul li a {
+  transform: rotate(0);
+  transition: 1s;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  display: inline-block;
+}
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background: #f9b41e;
+  font-size: 2em;
+  font-weight: bold;
+  border-top: 0.1em solid #333;
+  border-bottom: 0.1em solid #333;
+  padding-left: 0.5em;
+}
+
+.icon {
+  width: 1em;
+}
+
+.search {
+    margin: 2em 1em;
+}
+
+.title {
+    padding-left: 1em;
+    background: #111;
+    height: 4em;
+    line-height: 3.9em;
+}
+
+.title h1 {
+  color: white;
+  margin: 0;
+}
+
+.alphabet {
+  background: white;
+  height: 100vw;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+  padding: 0.5em;
+  border-left: 0.2em solid #333;
+}
+
+.alphabet li {
+  margin-top: 0.1em;
+  font-weight: bold;
+}
+.alphabet a {
+  text-decoration: none;
+  color: #f9b41e;
+}
+
+a.disabled {
+  color: #ddd;
+  cursor: default;
+}
+
+a.enabled {
+  text-decoration: none;
+  color: #f9b41e;
+  cursor: pointer;
+}
+
+.rotate {
+  transform: rotate(45deg);
+  transition: .2s;
+}
+
+.active {
+  background: #111 !important;
+}
+
+.highlight {
+  background: #888 !important;
+}
+
+.hide {display: none;}
+
+@supports (display:flex) {
+  .alphabet {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 1em;
+    height: 100%;
+    box-sizing: border-box;
+  }
+}
